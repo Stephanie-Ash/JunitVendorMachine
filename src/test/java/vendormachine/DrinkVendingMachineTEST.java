@@ -1,18 +1,27 @@
 package vendormachine;
 
+import vendormachine.users.util.Wallet;
 import vendormachine.vendors.DrinkVendingMachine;
+import vendormachine.vendors.enums.BRANDS;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 public class DrinkVendingMachineTEST {
 	
-	/** 
-	 * Task 2:
-	 * 	Objective:
-	 * 		Test the Wallet class from:
-	 * 		'vendormachine.vendors.DrinkVendingMachine'
-	 * 
-	 * 	Goal: 
-	 * 		80% code/line coverage
-	 * 		TDD: analyse code and add missing methods.
-	 * */
+	BRANDS brandName = BRANDS.EnergyMax;
+	
+	@Test
+    public void testConstructor(){
+		// Constructor 1
+		DrinkVendingMachine testVendor = new DrinkVendingMachine();
+		assertTrue(testVendor instanceof DrinkVendingMachine);
+		
+    	// Constructor 2
+    	testVendor = new DrinkVendingMachine(20.00f, brandName );
+    	assertTrue(testVendor instanceof DrinkVendingMachine);
+    	
+    }
 
 }
